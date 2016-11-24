@@ -14,57 +14,56 @@ import javax.persistence.Table;
 @Table(name = "machine")
 public class Machine {
 
-	@Column(name = "nom")
-	private String nom;
+    @Column(name = "nom")
+    private String nom;
 
-	@Column(name = "ip")
-	private String ip;
+    @Column(name = "ip")
+    private String ip;
 
-	//private Parc p;
-	@ManyToOne
-	private Salle salle;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    //private Parc p;
+    private String nomSalle;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-/*	@ManyToOne
-	@JoinColumn(name = "idSalle", foreignKey = @ForeignKey(name = "IDSALLE_FK"))
-	public Salle salle;
-*/
-	public Salle getSalle() {
-		return salle;
-	}
+/*    @ManyToOne
+    @JoinColumn(name = "idSalle", foreignKey = @ForeignKey(name = "IDSALLE_FK"))
+    public Salle salle;
 
-/*	public Long getIdSalle() {
-		return p.getIdSalle();
-	}*/
+    public Salle getSalle() {
+        return salle;
+    }*/
 
-	public void setSalle(Salle salle) {
-		this.salle = salle;
-	}
+/*    public Long getIdSalle() {
+        return p.getIdSalle();
+    }*/
 
-	public Long getId() {
-		return id;
-	}
+    public void setSalle(String nomSalle) {
+        this.nomSalle = nomSalle;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getIp() {
-		return ip;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setIp(String ip) {
-		this.ip = ip;
-	}
+    public String getIp() {
+        return ip;
+    }
 
-	public String getNom() {
-		return nom;
-	}
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 }

@@ -18,4 +18,4 @@
 - Configuration Hibernate 
 	-> Adrien
 - Configuration du web.xml 
-	-> Anthony/Kaïs
+	-> Anthony/Adrien
