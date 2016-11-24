@@ -18,7 +18,7 @@ public class UtilisateurDAO extends UtilDAO<Utilisateur> {
 		Utilisateur u = new Utilisateur();
 		//try {
 			u =  (Utilisateur) HibernateUtil.getSession()
-					.createQuery("from utilisateur where login=? and password=?")
+					.createQuery("from Utilisateur where login=? and password=?")
 					.setParameter(0, login)
 					.setParameter(1, password).getSingleResult();
 		//} catch (NoResultException nre) {
@@ -28,6 +28,6 @@ public class UtilisateurDAO extends UtilDAO<Utilisateur> {
 	}
 	
 	public List<Utilisateur> listAll() {
-		return HibernateUtil.getSession().createQuery("from utilisateur").list();
+		return HibernateUtil.getSession().createQuery("from Utilisateur").list();
 	}
 }

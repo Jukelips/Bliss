@@ -15,13 +15,13 @@ public class HibernateUtil {
 	static {
 		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml")
 				.build();
-		try {
+		//try {
 			Metadata meta = new MetadataSources(registry).getMetadataBuilder().build();
 			sessionFact = meta.getSessionFactoryBuilder().build();
-		} catch (Throwable e) {
+/*		} catch (Throwable e) {
 			System.err.println(e);
 			throw new ExceptionInInitializerError(e);
-		}
+		}*/
 	}
 
 	public static SessionFactory getSessionFactory() {

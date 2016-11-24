@@ -21,6 +21,7 @@ public class Machine {
 	private String ip;
 
 	//private Parc p;
+	@ManyToOne
 	private Salle salle;
 	
 	@Id
@@ -30,10 +31,10 @@ public class Machine {
 /*	@ManyToOne
 	@JoinColumn(name = "idSalle", foreignKey = @ForeignKey(name = "IDSALLE_FK"))
 	public Salle salle;
-
+*/
 	public Salle getSalle() {
 		return salle;
-	}*/
+	}
 
 /*	public Long getIdSalle() {
 		return p.getIdSalle();
