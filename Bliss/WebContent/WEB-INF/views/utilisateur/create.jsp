@@ -1,6 +1,6 @@
 <form class="form-horizontal" method="post" action="#">
   <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label">Login</label>
+    <label for="inputLogin3" class="col-sm-2 control-label">Login</label>
     <div class="col-sm-10">
       <input name="login" type="login" class="form-control" id="inputLogin3" placeholder="Login">
     </div>

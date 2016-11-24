@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bliss.Utils;
 import com.bliss.dao.UtilDAO;
 import com.bliss.dao.UtilisateurDAO;
 import com.bliss.metier.Utilisateur;
@@ -54,7 +55,7 @@ public class ServletUtilisateur extends UtilHttpServlet implements Servlet {
 		case "/create":
 			Utilisateur u = new Utilisateur();
 			u.setLogin(getParam("login", request));
-			try {
+			/*try {
 				MessageDigest md = MessageDigest.getInstance("MD5");
 				md.update(getParam("password", request).getBytes());
 				byte byteData[] = md.digest();
@@ -64,6 +65,12 @@ public class ServletUtilisateur extends UtilHttpServlet implements Servlet {
 					u.setPassword(sb.toString());
 				}
 			} catch (NoSuchAlgorithmException e) {
+				e.printStackTrace();
+			}*/
+			try {
+				u.setPassword(Utils.hashMD5(getParam("password", request)));
+			} catch (NoSuchAlgorithmException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			ud.save(u);

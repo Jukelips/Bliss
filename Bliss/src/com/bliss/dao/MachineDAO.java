@@ -18,7 +18,7 @@ public class MachineDAO extends UtilDAO<Machine> {
 		return HibernateUtil.getSession().load(Machine.class, id);
 	}
 	public List<Machine> listAll() {
-		return HibernateUtil.getSession().createQuery("from machine").list();
+		return HibernateUtil.getSession().createQuery("from Machine").list();
 	}
 
 }

@@ -1,6 +1,7 @@
  package com.bliss.controler;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -38,7 +39,13 @@ public class ServletAuthentification extends UtilHttpServlet {
 		if (password.equals("")) {
 			this.errors.add("Le mot de passe est obligatoire");
 		}
-		Utilisateur u = ud.getByLoginPassword(login, password);
+		Utilisateur u = null;
+		try {
+			u = ud.getByLoginPassword(login, password);
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		if (u == null) {
 			this.errors.add("Login ou mot de passe incorrect");
 		}
