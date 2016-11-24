@@ -14,12 +14,12 @@ public class UtilisateurDAO extends UtilDAO<Utilisateur> {
 		super(Utilisateur.class);
 	}
 
-	public Utilisateur getByMailPassword(final String mail, final String password){
+	public Utilisateur getByLoginPassword(final String login, final String password){
 		Utilisateur u = new Utilisateur();
 		try {
 			u =  (Utilisateur) HibernateUtil.getSession()
-					.createQuery("from Utilisateur where mail=? and password=?")
-					.setParameter(0, mail)
+					.createQuery("from utilisateur where login=? and password=?")
+					.setParameter(0, login)
 					.setParameter(1, password).getSingleResult();
 		} catch (NoResultException nre) {
 			nre.getMessage();
@@ -28,6 +28,6 @@ public class UtilisateurDAO extends UtilDAO<Utilisateur> {
 	}
 	
 	public List<Utilisateur> listAll() {
-		return HibernateUtil.getSession().createQuery("from Utilisateur").list();
+		return HibernateUtil.getSession().createQuery("from utilisateur").list();
 	}
 }

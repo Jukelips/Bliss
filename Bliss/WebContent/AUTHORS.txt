@@ -1,0 +1,21 @@
+- Kaïs Hammad
+- Fares Belmadi
+- Adrien Michel
+- Anthony Arenes 
+
+	https://github.com/Jukelips/Bliss
+
+- Création des fichiers JSP/AJAX/JS 
+	-> Fares/Kaïs
+- Création de la base de données + données 
+	-> Anthony/Fares
+- Création des objets (Servlet/Objet/DAO) 
+	-> Anthony/Adrien
+- Déclaration Servlet 
+	-> Anthony/Adrien
+- Déclaration Filtres 
+	-> Anthony/Adrien
+- Configuration Hibernate 
+	-> Adrien
+- Configuration du web.xml 
+	-> Anthony/Kaïs

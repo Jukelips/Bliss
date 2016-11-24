@@ -29,16 +29,16 @@ public class ServletAuthentification extends UtilHttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		final UtilisateurDAO ud = new UtilisateurDAO();
-		String mail = getParam("mail", req);
+		String login = getParam("login", req);
 		String password = getParam("password", req);
 
-		if (mail.equals("")) {
+		if (login.equals("")) {
 			this.errors.add("Le login est obligatoire");
 		}
 		if (password.equals("")) {
 			this.errors.add("Le mot de passe est obligatoire");
 		}
-		Utilisateur u = ud.getByMailPassword(mail, password);
+		Utilisateur u = ud.getByLoginPassword(login, password);
 		if (u == null) {
 			this.errors.add("Login ou mot de passe incorrect");
 		}

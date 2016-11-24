@@ -1,15 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>Bliss</display-name>
-  
-  
-  
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>Bliss</display-name>
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<scripting-invalid>true</scripting-invalid>
+		</jsp-property-group>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<include-prelude>/WEB-INF/includes/entete.jsp</include-prelude>
+			<include-coda>/WEB-INF/includes/pied.jsp</include-coda>
+		</jsp-property-group>
+	</jsp-config>
+	<servlet>
+		<servlet-name>ServletBackoffice</servlet-name>
+		<servlet-class>com.bliss.controler.ServletBackOffice</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletBackoffice</servlet-name>
+		<url-pattern>/backoffice/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ServletAuthentification</servlet-name>
+		<servlet-class>com.bliss.controler.ServletAuthentification</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletAuthentification</servlet-name>
+		<url-pattern>/login</url-pattern>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>FiltreAuthentification</filter-name>
+		<filter-class>com.bliss.filtres.FiltreAuthentification</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>FiltreAuthentification</filter-name>
+		<url-pattern>/backoffice/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>FiltreHibernate</filter-name>
+		<filter-class>com.bliss.filtres.FiltreHibernate</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>FiltreHibernate</filter-name>
+		<!-- <servlet-name>ServletAuthentification</servlet-name> <servlet-name>ServletBackoffice</servlet-name> 
+			<servlet-name>ServletDeTest</servlet-name> -->
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
 </web-app>

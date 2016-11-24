@@ -53,7 +53,7 @@ public class ServletUtilisateur extends UtilHttpServlet implements Servlet {
 		switch (action) {
 		case "/create":
 			Utilisateur u = new Utilisateur();
-			u.setLogin(getParam("mail", request));
+			u.setLogin(getParam("login", request));
 			try {
 				MessageDigest md = MessageDigest.getInstance("MD5");
 				md.update(getParam("password", request).getBytes());

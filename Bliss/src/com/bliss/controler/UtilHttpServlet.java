@@ -65,5 +65,4 @@ public class UtilHttpServlet extends HttpServlet {
 				return true;
 		return false;
 	}
-
 }
