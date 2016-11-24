@@ -8,11 +8,10 @@
 			<!-- driver jdbc -->
 			<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 			
-			
 			<!-- chaîne de connexion -->
-			<property name="connection.url">jdbc:mysql://localhost:3306/parc?autoReconnect=true</property>
+			<property name="connection.url">jdbc:mysql://localhost:3306/bliss?autoReconnect=true</property>
 			<property name="connection.username">root</property>
-			<property name="connection.password"></property>
+			<property name="connection.password">123</property>
 			
 			<!-- pool -->
 			<property name="connection.pool_size">2</property>
@@ -27,11 +26,11 @@
 			<property name="show_sql">true</property>
 			
 			<!-- génération auto de la base -->
-			<property name="hibernate.hbm2ddl.auto">create</property>
+			<property name="hibernate.hbm2ddl.auto">update</property>
 			
-			<mapping class="com.mastere.metier.Utilisateur"/>
-			<mapping class="com.mastere.metier.Machine"/>
-			<mapping class="com.mastere.metier.Salle"/>
-			<!--  <mapping package="com.mastere.metier"/>-->
+			<mapping class="com.bliss.metier.Utilisateur"/>
+			<mapping class="com.bliss.metier.Machine"/>
+			<mapping class="com.bliss.metier.Salle"/>
+			<!-- <mapping class="com.bliss.metier.Parc"/> -->
 		</session-factory>
 	</hibernate-configuration>

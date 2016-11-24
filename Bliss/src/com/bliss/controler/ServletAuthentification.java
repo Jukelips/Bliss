@@ -21,7 +21,7 @@ public class ServletAuthentification extends UtilHttpServlet {
 		}
 		if(path.equals("/logout")){
 			req.getSession().removeAttribute("UTILISATEUR");
-			redirectionInterne("/acceuil", req, resp);
+			redirectionInterne("/login", req, resp);
 			return;
 		}
 	}

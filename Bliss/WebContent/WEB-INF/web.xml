@@ -16,6 +16,15 @@
 		</jsp-property-group>
 	</jsp-config>
 	<servlet>
+		<servlet-name>ServletAccueil</servlet-name>
+		<servlet-class>com.bliss.controler.ServletAccueil</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletAccueil</servlet-name>
+		<url-pattern>/accueil/*</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
 		<servlet-name>ServletBackoffice</servlet-name>
 		<servlet-class>com.bliss.controler.ServletBackOffice</servlet-class>
 	</servlet>
@@ -48,8 +57,6 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>FiltreHibernate</filter-name>
-		<!-- <servlet-name>ServletAuthentification</servlet-name> <servlet-name>ServletBackoffice</servlet-name> 
-			<servlet-name>ServletDeTest</servlet-name> -->
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 

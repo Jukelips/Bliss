@@ -23,7 +23,7 @@ public class FiltreHibernate implements Filter{
 	public void doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain arg2)
 			throws IOException, ServletException {
 		arg2.doFilter(arg0, arg1);
-		try {
+/*		try {
 			if (HibernateUtil.getSession().getTransaction().isActive())
 				HibernateUtil.getSession().getTransaction().commit();
 		} catch (Exception e) {
@@ -31,7 +31,7 @@ public class FiltreHibernate implements Filter{
 		}finally {
 			if (HibernateUtil.getSession().isOpen())
 				HibernateUtil.getSession().close();
-		}	
+		}	*/
 	}
 	
 	@Override

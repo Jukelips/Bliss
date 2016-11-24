@@ -16,14 +16,14 @@ public class UtilisateurDAO extends UtilDAO<Utilisateur> {
 
 	public Utilisateur getByLoginPassword(final String login, final String password){
 		Utilisateur u = new Utilisateur();
-		try {
+		//try {
 			u =  (Utilisateur) HibernateUtil.getSession()
 					.createQuery("from utilisateur where login=? and password=?")
 					.setParameter(0, login)
 					.setParameter(1, password).getSingleResult();
-		} catch (NoResultException nre) {
-			nre.getMessage();
-		}
+		//} catch (NoResultException nre) {
+			//nre.getMessage();
+		//}
 		return u;
 	}
 	

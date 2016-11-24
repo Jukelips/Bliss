@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet"
 	href="<c:url value="/bootstrap/css/bootstrap.min.css"/>" />
-<title>Formulaire</title>
+<title>Projet Bliss</title>
 	<script type="text/javascript" src="<c:url value="/jquery/jQuery v3.1.1.js"/>">
 	</script>
 	<script type="text/javascript" src="<c:url value="/bootstrap/js/bootstrap.min.js"/>">

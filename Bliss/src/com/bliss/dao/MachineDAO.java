@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.bliss.db.HibernateUtil;
 import com.bliss.metier.Machine;
-import com.bliss.metier.Utilisateur;
 
 
 public class MachineDAO extends UtilDAO<Machine> {
@@ -18,7 +17,7 @@ public class MachineDAO extends UtilDAO<Machine> {
 	public Machine getById(long id) {
 		return HibernateUtil.getSession().load(Machine.class, id);
 	}
-	public List<Utilisateur> listAll() {
+	public List<Machine> listAll() {
 		return HibernateUtil.getSession().createQuery("from machine").list();
 	}
 
