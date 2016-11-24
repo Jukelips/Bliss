@@ -53,7 +53,7 @@ public class ServletAuthentification extends UtilHttpServlet {
 			afficherVue("login", req, resp);
 		} else {
 			req.getSession().setAttribute("UTILISATEUR", u);
-			redirectionInterne("/utilisateur/create", req, resp);
+			redirectionInterne("/backoffice/liste_machine", req, resp);
 		}
 	}
 }

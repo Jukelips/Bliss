@@ -17,7 +17,7 @@ public class SalleDAO extends UtilDAO<Salle> {
 	}
 
 	public List<Salle> listAll() {
-		return HibernateUtil.getSession().createQuery("from salle").list();
+		return HibernateUtil.getSession().createQuery("from Salle").list();
 	}
 
 }

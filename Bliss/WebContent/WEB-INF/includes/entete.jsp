@@ -31,9 +31,12 @@
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<c:if test="${!empty sessionScope.UTILISATEUR }">
-					<li>Bonjour ${sessionScope.UTILISATEUR.login}</li>
-					<li><a class="btn btn-primary" href="<c:url value="/logout"/>"></a></li>
-					<li><a href="<c:url value="/backoffice"/>">Backoffice</a></li>
+					<li>Bonjour ${sessionScope.UTILISATEUR.login}</li></br>
+					<li><a class="btn btn-primary" href="<c:url value="/logout"/>">Déconnexion</a></li>
+					<li><a class="btn btn-primary" href="<c:url value="/backoffice"/>">Backoffice</a></li>
+					<li><a class="btn btn-primary" href="<c:url value="/backoffice/liste_salle"/>">Liste des salles</a></li>
+					<!-- <li><a href="<c:url value="/backoffice"/>">Backoffice</a></li> -->
+					<!-- <li><a href="<c:url value="/backoffice/liste_salle"/>">Liste des Salles</a></li> -->
 				</c:if>
 				<c:if test="${empty sessionScope.UTILISATEUR }">
 					<li><a href="<c:url value="/login"/>">Login</a></li>
