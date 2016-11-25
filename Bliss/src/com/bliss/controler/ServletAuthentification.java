@@ -43,7 +43,6 @@ public class ServletAuthentification extends UtilHttpServlet {
 		try {
 			u = ud.getByLoginPassword(login, password);
 		} catch (NoSuchAlgorithmException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if (u == null) {

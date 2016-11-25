@@ -13,6 +13,8 @@ public class MachineDAO extends UtilDAO<Machine> {
     public MachineDAO() {
         super(Machine.class);
     }
+    
+    
 
     @Override
     public Machine getById(long id) {

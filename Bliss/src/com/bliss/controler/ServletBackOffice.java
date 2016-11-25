@@ -20,6 +20,9 @@ public class ServletBackOffice extends UtilHttpServlet {
 		final String action = req.getPathInfo() == null ? "/" : req.getPathInfo();
 		SalleDAO sd = new SalleDAO();
 		MachineDAO md = new MachineDAO();
+		Machine m = new Machine();
+		Salle s = new Salle();
+		Long id;
 		switch (action) {
 		case "/":
 			afficherVue("dashboard", req, resp);
@@ -37,8 +40,19 @@ public class ServletBackOffice extends UtilHttpServlet {
 			afficherVue("add_Salle", req, resp);
 			break;
 		case "/add_Machine":
-			req.setAttribute("salles", sd.listAll());
+			req.setAttribute("salles", md.listAll());
 			afficherVue("add_Machine", req, resp);
+			break;
+		case "/modifier_machine":
+			id = getParamAsInt("id", req);
+			req.setAttribute("m", md.getById(id));
+			req.setAttribute("salles", sd.listAll());
+			afficherVue("modifier_machine", req, resp);
+			break;
+		case "/modifier_salle":
+			id = getParamAsInt("id", req);
+			req.setAttribute("s", sd.getById(id));
+			afficherVue("modifier_salle", req, resp);
 			break;
 		default:
 			resp.sendError(404);
@@ -78,11 +92,30 @@ public class ServletBackOffice extends UtilHttpServlet {
 			m.setNomSalle(s.getNom());
 			m.setSalle(s);
 			md.save(m);
+			redirectionInterne("/backoffice/liste_machine", req, resp);
+			break;
+		case "/modifier_machine":
+			m =  md.getById(getParamAsInt("id", req));
+			m.setIp(getParam("ip", req));
+			m.setNom(getParam("nom", req));
+			s = sd.getById(getParamAsInt("salle", req));
+			m.setNomSalle(s.getNom());
+			m.setSalle(s);
+			//md.save(m);
+			md.save(m);
+			redirectionInterne("/backoffice/liste_machine", req, resp);
+			break;
+		case "/modifier_salle":
+			s = sd.getById(getParamAsInt("salle", req));
+			s.setNom(getParam("nom", req));
+			sd.save(s);
+			redirectionInterne("/backoffice/liste_salle", req, resp);
 			break;
 		case "/add_Salle":
 			s = new Salle();
 			s.setNom(getParam("nom", req));
 			sd.save(s);
+			redirectionInterne("/backoffice/liste_salle", req, resp);
 			break;
 		default:
 			resp.sendError(404);

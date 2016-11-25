@@ -11,7 +11,8 @@
         	<td>${m.nom }</td>
             <td>${m.ip }</td>
             <td>${m.nomSalle}</td>
-            <td><a href="#" class="btn btn-default suppr" data-id="${m.id}">Supprimer</a></td>
+            <td><a href="<c:url value="/backoffice/modifier_machine?id=${m.id }"/>" class="btn btn-default" data-id="${m.id}">Modifier</a>
+            <a href="#" class="btn btn-default suppr" data-id="${m.id}">Supprimer</a></td>
         </tr>
     </c:forEach>
 </table>

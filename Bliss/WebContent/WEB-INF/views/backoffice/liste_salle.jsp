@@ -6,7 +6,8 @@
 	<c:forEach items="${salles}" var="s">
 		<tr>
 			<td>${s.nom }</td>
-			<td><a href="#" class="btn btn-default suppr" data-id="${s.id}">Supprimer</a></td>
+			<td><a href="<c:url value="/backoffice/modifier_salle?id=${s.id }"/>" class="btn btn-default" data-id="${s.id}">Modifier</a>
+			<a href="#" class="btn btn-default suppr" data-id="${s.id}">Supprimer</a></td>
 		</tr>
 	</c:forEach>
 </table>
