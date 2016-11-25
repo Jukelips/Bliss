@@ -19,29 +19,33 @@ public class Machine {
 
     @Column(name = "ip")
     private String ip;
-
-    //private Parc p;
+    
+    @Column(name = "nomSalle")
     private String nomSalle;
+
+    public String getNomSalle() {
+		return nomSalle;
+	}
+    
+    public void setNomSalle(String nomSalle) {
+		this.nomSalle = nomSalle;
+	}
+    
+	@ManyToOne
+	@JoinColumn(name = "idSalle", foreignKey = @ForeignKey(name = "parc_ibfk_1"))
+	public Salle salle;
+	
+	public Salle getSalle() {
+		return salle;
+	}
+	
+	public void setSalle(Salle salle) {
+		this.salle = salle;
+	}
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-/*    @ManyToOne
-    @JoinColumn(name = "idSalle", foreignKey = @ForeignKey(name = "IDSALLE_FK"))
-    public Salle salle;
-
-    public Salle getSalle() {
-        return salle;
-    }*/
-
-/*    public Long getIdSalle() {
-        return p.getIdSalle();
-    }*/
-
-    public void setSalle(String nomSalle) {
-        this.nomSalle = nomSalle;
-    }
 
     public Long getId() {
         return id;

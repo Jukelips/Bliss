@@ -2,13 +2,15 @@
     <tr>
         <th>Nom</th>
         <th>IP</th>
+        <th>Salle</th>
         <th>Action</th>
     </tr>
-    <c:forEach items="${machines}" var="m">
+    
+    <c:forEach items="${machines}" var="m" >
         <tr>
-            <td>${u.ip }</td>
-            <td>${u.nom }</td>
-            <td>${u.nomSalle }</td>
+        	<td>${m.nom }</td>
+            <td>${m.ip }</td>
+            <td>${m.nomSalle}</td>
             <td><a href="#" class="btn btn-default suppr" data-id="${m.id}">Supprimer</a></td>
         </tr>
     </c:forEach>

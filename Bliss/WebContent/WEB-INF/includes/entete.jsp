@@ -11,10 +11,14 @@
 <link rel="stylesheet"
 	href="<c:url value="/bootstrap/css/bootstrap.min.css"/>" />
 <title>Projet Bliss</title>
-	<script type="text/javascript" src="<c:url value="/jquery/jQuery v3.1.1.js"/>">
-	</script>
-	<script type="text/javascript" src="<c:url value="/bootstrap/js/bootstrap.min.js"/>">
-	</script>
+<script type="text/javascript"
+	src="<c:url value="/jquery/jQuery v3.1.1.js"/>">
+	
+</script>
+<script type="text/javascript"
+	src="<c:url value="/bootstrap/js/bootstrap.min.js"/>">
+	
+</script>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -29,14 +33,25 @@
 		</div>
 
 		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-left">
+				<li><h3>Bonjour ${sessionScope.UTILISATEUR.login}</h3></li>
+				</br>
+			</ul>
+			</br>
 			<ul class="nav navbar-nav navbar-right">
 				<c:if test="${!empty sessionScope.UTILISATEUR }">
-					<li>Bonjour ${sessionScope.UTILISATEUR.login}</li></br>
-					<li><a class="btn btn-primary" href="<c:url value="/logout"/>">Déconnexion</a></li>
-					<li><a class="btn btn-primary" href="<c:url value="/backoffice"/>">Backoffice</a></li>
-					<li><a class="btn btn-primary" href="<c:url value="/backoffice/liste_salle"/>">Liste des salles</a></li>
-					<!-- <li><a href="<c:url value="/backoffice"/>">Backoffice</a></li> -->
-					<!-- <li><a href="<c:url value="/backoffice/liste_salle"/>">Liste des Salles</a></li> -->
+					<div class="dropdown">
+						<button class="btn btn-primary dropdown-toggle" type="button"
+							data-toggle="dropdown">
+							Menu <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="<c:url value="/backoffice/liste_salle"/>">Liste
+									des salles</a></li>
+							<li><a href="<c:url value="/backoffice/liste_machine"/>">Liste
+									des machines</a></li>
+							<li><a href="<c:url value="/logout"/>">Déconnexion</a></li>
+					</div>
 				</c:if>
 				<c:if test="${empty sessionScope.UTILISATEUR }">
 					<li><a href="<c:url value="/login"/>">Login</a></li>
@@ -45,8 +60,6 @@
 		</div>
 	</div>
 	</nav>
-	
-	
 	<c:if test="${!empty errors}">
 		<div class="alert alert-danger" role="alert">
 			<ul>
