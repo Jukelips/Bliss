@@ -19,15 +19,16 @@
     $(document).ready(function(){
         $(".suppr").each(function(){
             $(this).click(function(){
+            	var lien = $(this);
                 var idMachine = $(this).data("id");
                 //alter(idUtilisateur);
                 $.ajax({
-                    url:"<c:url value='/backoffice/delete-machine'/>",
+                    url:"<c:url value='/backoffice/delete_machine'/>",
                     type: "POST",
                     dataType:"json",
                     data:{id: idMachine},
-                    success:function(obj){
-                        lien.parent().parent().fadeout("slow");
+                    complete:function(obj){
+                        lien.parent().parent().fadeOut("slow");
                     }
                 });
             });

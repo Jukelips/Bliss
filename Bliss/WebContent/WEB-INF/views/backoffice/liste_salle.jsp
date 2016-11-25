@@ -17,7 +17,7 @@
 				var idSalle = $(this).data("id");
 				//alter(idUtilisateur);
 				$.ajax({
-					url:"<c:url value='/backoffice/delete-salle'/>",
+					url:"<c:url value='/backoffice/delete_salle'/>",
 					type: "POST",
 					dataType:"json",
 					data:{id: idSalle},

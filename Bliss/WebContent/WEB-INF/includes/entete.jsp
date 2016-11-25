@@ -13,11 +13,12 @@
 <title>Projet Bliss</title>
 <script type="text/javascript"
 	src="<c:url value="/jquery/jQuery v3.1.1.js"/>">
-	
+</script>
+<script type="text/javascript"
+	src="<c:url value="/garlic/garlic.js"/>">
 </script>
 <script type="text/javascript"
 	src="<c:url value="/bootstrap/js/bootstrap.min.js"/>">
-	
 </script>
 </head>
 <body>
@@ -50,6 +51,9 @@
 									des salles</a></li>
 							<li><a href="<c:url value="/backoffice/liste_machine"/>">Liste
 									des machines</a></li>
+							<li><a href="<c:url value="/backoffice/add_Machine"/>">Ajouter une machine</a></li>
+							<li><a href="<c:url value="/backoffice/add_Salle"/>">Ajouter une salle</a></li>
+									
 							<li><a href="<c:url value="/logout"/>">Déconnexion</a></li>
 					</div>
 				</c:if>

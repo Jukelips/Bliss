@@ -1,6 +1,7 @@
 package com.bliss.dao;
 
 import com.bliss.db.HibernateUtil;
+import com.bliss.metier.Salle;
 import com.bliss.metier.Utilisateur;
 
 public class UtilDAO<T> {
@@ -22,5 +23,9 @@ public class UtilDAO<T> {
 
 	public void delete(T o){
 		HibernateUtil.getSession().delete(o);
+	}
+
+	public T getByNom(String nom) {
+		return (T) HibernateUtil.getSession().load(type,nom);
 	}
 }

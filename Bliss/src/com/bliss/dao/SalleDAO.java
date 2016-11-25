@@ -15,6 +15,11 @@ public class SalleDAO extends UtilDAO<Salle> {
 	public Salle getById(long id) {
 		return HibernateUtil.getSession().load(Salle.class, id);
 	}
+	
+	@Override
+	public Salle getByNom(String nom) {
+		return HibernateUtil.getSession().load(Salle.class, nom);
+	}
 
 	public List<Salle> listAll() {
 		return HibernateUtil.getSession().createQuery("from Salle").list();

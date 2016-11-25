@@ -32,7 +32,7 @@ public class Machine {
 	}
     
 	@ManyToOne
-	@JoinColumn(name = "idSalle", foreignKey = @ForeignKey(name = "parc_ibfk_1"))
+	//@JoinColumn(name = "id", foreignKey = @ForeignKey(name = "salle_ibfk_1"))
 	public Salle salle;
 	
 	public Salle getSalle() {

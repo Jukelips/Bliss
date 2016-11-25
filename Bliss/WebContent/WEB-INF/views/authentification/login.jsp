@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
-		<form  method="post" action="<c:url value ="/login"/>">
+		<form  method="post" data-persist="garlic" action="<c:url value ="/login"/>">
 			<div class="form-group">
 				<label for="exampleInputEmail1">Login</label>
 				<input type="login" name="login" class="form-control" />
