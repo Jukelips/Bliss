@@ -23,7 +23,7 @@
 		<div class="col-sm-6">
 			<select name="salle" class="form-control">
 				<c:forEach var="salle" items="${salles}">
-					<option value="${salle.id}">${salle.nom}</option>
+					<option value="${salle.id}">${salle.nomSalle}</option>
 				</c:forEach>
 			</select>
 		</div>
